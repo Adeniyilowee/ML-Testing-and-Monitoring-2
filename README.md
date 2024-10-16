@@ -5,8 +5,8 @@ This is a fullstack ML testing and monitoring repository for a Landslide predict
 <div style="text-align: center;">
   <table style="margin: auto;">
     <tr>
-      <td><img src="src/lsp_model/images/confusion_matrix.png" alt="Image 1" width="300"/></td>
-      <td><img src="src/lsp_model/images/roc.png" alt="Image 2" width="300"/></td>
+      <td><img src="src/lspb_model/images/confusion_matrix.png" alt="Image 1" width="300"/></td>
+      <td><img src="src/lspb_model/images/roc.png" alt="Image 2" width="300"/></td>
     </tr>
   </table>
 </div>
@@ -15,8 +15,8 @@ This is a fullstack ML testing and monitoring repository for a Landslide predict
 
 Please install a Miniconda environment. You will find a Windows, macOS or Linux version here: https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html
 
-- Clone this repository by using this line of code: 
-        
+- Clone this repository by using this line of code:
+
         git clone https://github.com/Adeniyilowee/ML-Testing-and-Monitoring.git
 
 - Open a terminal and change directory to the git cloned repository path:
@@ -31,11 +31,11 @@ Please install a Miniconda environment. You will find a Windows, macOS or Linux 
 
         python -m venv py_env
 
-- Activate the environment: 
+- Activate the environment:
 
         source py_env/bin/activate
 
-- Install requirement.txt using pip : 
+- Install requirement.txt using pip :
 
         pip --timeout=1000 install -r requirements.txt
 
