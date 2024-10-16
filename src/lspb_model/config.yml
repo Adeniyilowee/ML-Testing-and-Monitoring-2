@@ -1,0 +1,148 @@
+# Package Overview
+package_name: fullstack_boosting_model
+
+# Data Files
+pipeline_name: boosting_pipe
+pipeline_save_file: boosting
+training_data_file: LandslideData.csv
+test_data_file: test1.csv
+
+modelchoice: boosting_dt
+
+variables_to_rename:
+  ID: ID
+  aspect: ASPECT
+  strdist: STREAM_DIST
+  basarea: BASE_AREA
+  basin: BASIN
+  curvature: CURVATURE
+  curve_cont: CURVE_CONT
+  curve_prof: CURVE_PROF
+  curves: CURVES
+  drop: DROP
+  rockdist: ROCK_DIST
+  flowdir: FLOW_DIR
+  fos: FOS
+  lith: LITHOLOGY
+  elev: ELEVATION
+  cohesion: COHESION
+  slide: LANDSLIDE
+  scarpdist: SCARP_DIST
+  scarps: SCARPS
+  frictang: FRICTION_ANGLE
+  slope: SLOPE
+  slopeleg: SLOPE_LEG
+  woods: WOODS
+  specwt: SPECIFIC_WT
+
+variables_to_reorder:
+  - ID
+  - ASPECT
+  - STREAM_DIST
+  - BASE_AREA
+  - BASIN
+  - CURVATURE
+  - CURVE_CONT
+  - CURVE_PROF
+  - CURVES
+  - DROP
+  - ROCK_DIST
+  - FLOW_DIR
+  - FOS
+  - LITHOLOGY
+  - ELEVATION
+  - COHESION
+  - SCARP_DIST
+  - SCARPS
+  - FRICTION_ANGLE
+  - SLOPE
+  - SLOPE_LEG
+  - WOODS
+  - SPECIFIC_WT
+  - LANDSLIDE
+
+numerical_vars_1:
+  - ASPECT
+  - BASE_AREA
+  - BASIN
+  - CURVATURE
+  - CURVE_CONT
+  - CURVE_PROF
+  - CURVES
+  - DROP
+  - FLOW_DIR
+
+numerical_vars_2:
+  - FOS
+  - ELEVATION
+  - COHESION
+  - FRICTION_ANGLE
+  - SLOPE
+  - SLOPE_LEG
+  - SPECIFIC_WT
+
+categorical_vars_1:
+  - LANDSLIDE
+
+categorical_vars_2:
+  - LITHOLOGY
+  - SCARPS
+  - WOODS
+
+astype_features:
+  LANDSLIDE: "int64"
+  LITHOLOGY: "int64"
+  WOODS: "int64"
+  SCARPS: "int64"
+
+special_edit: SCARPS
+
+negative_variables:
+  - CURVATURE
+  - CURVE_CONT
+  - CURVE_PROF
+
+variables_to_drop:
+  - ASPECT
+  - LITHOLOGY
+
+target: LANDSLIDE
+
+features:
+  - STREAM_DIST
+  - BASE_AREA
+  - BASIN
+  - CURVATURE
+  - CURVE_CONT
+  - CURVE_PROF
+  - CURVES
+  - DROP
+  - ROCK_DIST
+  - FLOW_DIR
+  - FOS
+  - ELEVATION
+  - COHESION
+  - SCARP_DIST
+  - SCARPS
+  - FRICTION_ANGLE
+  - SLOPE
+  - SLOPE_LEG
+  - WOODS
+  - SPECIFIC_WT
+
+# set train/test split
+train_size: 0.70
+test_size: 0.30
+
+# to set the random seed
+random_state: 45
+
+# The number of boosting stages to perform
+n_estimators: 1000
+
+# loss function to be optimized
+loss: ls
+
+allowed_loss_functions:
+  - ls
+  - huber
